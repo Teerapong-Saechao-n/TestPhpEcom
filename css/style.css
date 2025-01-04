@@ -1,0 +1,581 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* กำหนดให้ html และ body ขยายเต็มหน้าจอ */
+html,
+body {
+    height: 100%;
+    /* ทำให้ body ขยายเต็มหน้าจอ */
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    /* ให้เนื้อหาอยู่ในแนวตั้ง */
+}
+
+/* Header */
+header {
+    width: 100%;
+}
+
+/* ชั้นที่ 1 (Header ข้างบน) */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    /* ลดขนาด padding */
+    background-color: #333;
+}
+
+.header-top .logo a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 8px;
+    /* ลดขนาดตัวอักษร */
+    font-weight: bold;
+}
+
+.header-top .login a {
+    background-color: #3498db;
+    color: white;
+    padding: 8px 16px;
+    /* ปรับขนาด padding */
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 0.9em;
+    /* ลดขนาดตัวอักษร */
+}
+
+.header-top .login a:hover {
+    background-color: #2980b9;
+}
+
+/* ชั้นที่ 2 (Header ข้างล่าง) */
+.header-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* โลโก้ตรงกลาง */
+.header-bottom .logo-center a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.logo-center a h1 {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+/* เมนูและแถบค้นหาที่อยู่ใน header-bottom */
+.header-bottom .menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-grow: 1;
+    align-items: center;
+    /* ให้เมนูอยู่ในแนวตั้งตรงกลาง */
+}
+
+.header-bottom .menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px 0;
+    /* เพิ่ม padding เพื่อให้มีขนาดเท่ากับ input ค้นหา */
+}
+
+.header-bottom .menu a:hover {
+    color: #2980b9;
+}
+
+/* แถบค้นหา */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* จัดให้แถบค้นหากลางแนวตั้ง */
+    gap: 10px;
+}
+
+.search-bar input {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    width: 200px;
+    transition: width 0.3s ease-in-out;
+    height: 40px;
+    /* กำหนดความสูงของ input ให้เหมือนกับเมนู */
+}
+
+.search-bar input:focus {
+    width: 250px;
+    /* ขยายขนาดเมื่อมีการเลือก */
+    background-color: #f4f4f4;
+}
+
+/* ปุ่ม logout */
+.logout-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 40px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    margin-top: auto;
+    /* ทำให้ footer อยู่ที่ด้านล่างสุด */
+}
+
+
+/* ปรับตำแหน่งของข้อความยินดีต้อนรับ */
+/* สไตล์สำหรับข้อความยินดีต้อนรับ */
+.welcome-msg {
+    color: white;
+    /* ทำให้ข้อความเป็นสีขาว */
+    font-size: 1.2em;
+    /* ขนาดฟอนต์ */
+    margin-right: 10px;
+    /* เพิ่มระยะห่างระหว่างข้อความและปุ่ม */
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+    /* ทำให้ footer อยู่ที่ด้านล่างสุด */
+}
+
+/* ฟอร์ม Login */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-container .form-group {
+    margin-bottom: 15px;
+}
+
+.login-container label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #2980b9;
+}
+
+.login-container .error {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login-container p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login-container a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+/* ฟอร์ม Register */
+.register-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.register-container .form-group {
+    margin-bottom: 15px;
+}
+
+.register-container label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.register-container input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.register-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.register-container button:hover {
+    background-color: #2980b9;
+}
+
+.register-container .error {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.register-container p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.register-container a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.register-container a:hover {
+    text-decoration: underline;
+}
+
+
+/* Product Section */
+.products {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+    /* ให้เนื้อหาขยายเต็มพื้นที่ที่เหลือ */
+}
+
+.products h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.product-item {
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-item h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.product-item .price {
+    color: #e74c3c;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.product-item button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.product-item button:hover {
+    background-color: #2980b9;
+}
+
+/* ตกแต่งหน้า cart.php */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    padding: 20px; /* เพิ่ม padding รอบข้าง */
+}
+
+.cart-table th, .cart-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.cart-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.cart-table td img {
+    max-width: 100px;
+    height: auto;
+}
+
+.remove-item-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-item-btn:hover {
+    background-color: #c0392b;
+}
+
+.cart-summary {
+    text-align: right;
+    margin-top: 20px;
+    padding: 20px; /* เพิ่ม padding รอบ ๆ summary */
+}
+
+.checkout-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.checkout-btn:hover {
+    background-color: #2980b9;
+}
+
+/* เพิ่ม padding ให้กับองค์ประกอบต่าง ๆ */
+section.cart {
+    padding: 20px;
+}
+
+.cart-table td, .cart-table th {
+    padding: 10px; /* เพิ่ม padding ให้กับแต่ละ cell */
+}
+
+
+
+
+/* สไตล์สำหรับหน้า Checkout */
+.checkout {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.checkout h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.order-summary {
+    margin-bottom: 20px;
+}
+
+.order-summary h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.order-summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.order-summary-table th,
+.order-summary-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.order-summary-table th {
+    background-color: #3498db;
+    color: white;
+}
+
+.order-summary-table td {
+    background-color: #f9f9f9;
+}
+
+.checkout-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-form .form-group {
+    margin-bottom: 15px;
+}
+
+.checkout-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.checkout-form input,
+.checkout-form textarea,
+.checkout-form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.checkout-form button.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.checkout-form button.submit-btn:hover {
+    background-color: #2980b9;
+}
+
+/* สไตล์สำหรับแถบค้นหา */
+.search-bar {
+    position: relative;
+    display: inline-block;
+    width: 300px; /* ความกว้างของแถบค้นหา */
+}
+
+#search-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#search-result {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 300px;
+    overflow-y: auto; /* ทำให้สามารถเลื่อนรายการได้เมื่อมีหลายผลลัพธ์ */
+    z-index: 1000;
+    display: none; /* เริ่มต้นปิดผลลัพธ์การค้นหา */
+}
+
+.search-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.search-item img {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.search-item a {
+    text-decoration: none;
+    color: #333;
+}
+
+.search-item:hover {
+    background-color: #f4f4f4;
+}
